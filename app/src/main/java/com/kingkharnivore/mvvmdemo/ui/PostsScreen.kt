@@ -140,7 +140,6 @@ fun PostScreen(viewModel: PostViewModel = viewModel()) {
 @Composable
 fun PostItem(post: Post) {
     var isPressed by remember { mutableStateOf(false) }
-
     val scale by animateFloatAsState(
         targetValue = if (isPressed) 1.05f else 1f,
         animationSpec = spring(
@@ -179,7 +178,6 @@ fun PostItem(post: Post) {
                         )
                     )
             )
-
             Column(modifier = Modifier.padding(20.dp)) {
                 // Header Row with User Badge and Post ID
                 Row(
@@ -213,7 +211,6 @@ fun PostItem(post: Post) {
                                 fontWeight = FontWeight.Bold
                             )
                         }
-
                         Text(
                             text = "User ${post.userId}",
                             color = AppColors.TextSecondary,
@@ -221,7 +218,6 @@ fun PostItem(post: Post) {
                             fontWeight = FontWeight.SemiBold
                         )
                     }
-
                     // Post ID Badge
                     Surface(
                         shape = RoundedCornerShape(12.dp),
@@ -236,9 +232,7 @@ fun PostItem(post: Post) {
                         )
                     }
                 }
-
                 Spacer(modifier = Modifier.height(16.dp))
-
                 // Title
                 Text(
                     text = post.title,
@@ -248,9 +242,7 @@ fun PostItem(post: Post) {
                     maxLines = 2,
                     overflow = TextOverflow.Ellipsis
                 )
-
                 Spacer(modifier = Modifier.height(12.dp))
-
                 // Body
                 Text(
                     text = post.body,
