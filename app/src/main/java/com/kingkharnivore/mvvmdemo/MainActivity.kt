@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.material3.MaterialTheme
-import com.kingkharnivore.mvvmdemo.ui.PostScreen
+import com.kingkharnivore.mvvmdemo.ui.PostsScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -12,7 +12,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             MaterialTheme {
                 // A surface container using the 'background' color from the theme
-                PostScreen()
+                PostsScreen()
             }
         }
     }

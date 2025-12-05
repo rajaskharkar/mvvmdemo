@@ -44,11 +44,12 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.kingkharnivore.mvvmdemo.R
 import com.kingkharnivore.mvvmdemo.model.Post
 import com.kingkharnivore.mvvmdemo.viewmodel.PostViewModel
 
 @Composable
-fun PostScreen(viewModel: PostViewModel = viewModel()) {
+fun PostsScreen(viewModel: PostViewModel = viewModel()) {
     val posts by viewModel.posts.collectAsState()
     val isLoading by viewModel.isLoading.collectAsState()
     val error by viewModel.error.collectAsState()
@@ -77,7 +78,7 @@ fun PostScreen(viewModel: PostViewModel = viewModel()) {
                         strokeWidth = 4.dp
                     )
                     Text(
-                        text = "Loading amazing content...",
+                        text = R.string.loading.toString(),
                         style = MaterialTheme.typography.titleMedium,
                         color = AppColors.TextSecondary
                     )
@@ -92,11 +93,11 @@ fun PostScreen(viewModel: PostViewModel = viewModel()) {
                     verticalArrangement = Arrangement.spacedBy(16.dp)
                 ) {
                     Text(
-                        text = "⚠️",
+                        text = R.string.warning.toString(),
                         style = MaterialTheme.typography.displayLarge
                     )
                     Text(
-                        text = "Oops! Something went wrong",
+                        text = R.string.oops.toString(),
                         style = MaterialTheme.typography.headlineSmall,
                         color = AppColors.TextPrimary,
                         fontWeight = FontWeight.Bold
@@ -116,7 +117,7 @@ fun PostScreen(viewModel: PostViewModel = viewModel()) {
                         modifier = Modifier.padding(top = 8.dp)
                     ) {
                         Text(
-                            text = "Try Again",
+                            text = R.string.retry.toString(),
                             modifier = Modifier.padding(horizontal = 24.dp, vertical = 8.dp)
                         )
                     }
