@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MvvmDemo</string>
+    <string name="loading">Loading amazing content…</string>
+    <string name="oops">Oops! Something went wrong</string>
+    <string name="warning">⚠️</string>
+    <string name="retry">Try again</string>
 </resources>

@@ -8,6 +8,8 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
+const val UNKNOWN_ERROR_OCCURRED = "Unknown error occurred";
+
 class PostViewModel (
     private val repository: PostRepository = PostRepository()
 ) : ViewModel() {
@@ -33,7 +35,7 @@ class PostViewModel (
             result.onSuccess { postsList ->
                 _posts.value = postsList
             }.onFailure { exception ->
-                _error.value = exception.message ?: "Unknown error occurred"
+                _error.value = exception.message ?: UNKNOWN_ERROR_OCCURRED
             }
             _isLoading.value = false
         }
